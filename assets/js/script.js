@@ -48,8 +48,10 @@ function checkAnswer() {
 
     if (isCorrect) {
         alert("Hey! You got it right!");
+        incrementScore();
     } else {
         alert(`Awwwww..... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}`);
+        incrementWrongAnswer();
     }
 
     runGame(calculatedAnswer[1]);
@@ -73,12 +75,21 @@ function calculateCorrectAnswer() {
     }
 }
 
+/**
+ * Gets the correct answer score from the DOM and increments it by one
+ */
 function incrementScore() {
-
+    let currentScore = parseInt(document.getElementById("score").innerText);
+    currentScore += 1;
+    document.getElementById("score").textContent = currentScore;
 }
 
+/**
+ * Gets the incorrect answer score from the DOM and increments it by one
+ */
 function incrementWrongAnswer() {
-
+    let currentScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").textContent = ++currentScore; //I have done this different to incrementScore, both ways work they are just different.
 }
 
 function displayAdditionQuestion(operand1, operand2) {
