@@ -33,7 +33,7 @@ function runGame(gameType) {
     }
     else {
         alert(`Unknown game type: ${gameType}`); // in case of error in passing of parameter
-        throw `Unknown game type: ${gameType}. Aborting!`; 
+        throw `Unknown game type: ${gameType}. Aborting!`; // if error does occur throw will terminate the gmae and pass the given error to the console
     }
 }
 
@@ -41,8 +41,22 @@ function checkAnswer() {
 
 }
 
+/**
+ * Gets the operands (the numbers) and the operatorator (plus, minus etc.)
+ * directly from the dom, and returns the correct answer.
+ */
 function calculateCorrectAnswer() {
+    let operand1 = parseInt(document.getElementById('operand1').innerText); // parseInt used to convert string JavaScript pulls from the DOM into an integer.
+    let operand2 = parseInt(document.getElementById('operand2').innerText);
+    let operator = document.getElementById('operator').innerText;
 
+    if (operator === "+") {
+        return [operand1 + operand2, "addition"];
+    }
+    else {
+        alert(`Unimplemented operator ${operator}`);
+        throw `Unimplemented operator ${operator}. Aborting!`;
+    }
 }
 
 function incrementScore() {
