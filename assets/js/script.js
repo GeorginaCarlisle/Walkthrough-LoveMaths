@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let button of buttons) {
         button.addEventListener("click", function () { // Function runs straight away. Note how original ( is not closed.
             if (this.getAttribute("data-type") === "submit") { //'this' used to refer to the specifc button pressed
-                alert("You clicked submit!");
+                checkAnswer();
             } else {
                 let gameType = this.getAttribute("data-type"); // here we find out what data type the button clicked has
-                runGame(gameType); //Originally alert placed into loop to check it worked.
+                runGame(gameType); //This then lonks through to the specific type of question clicked
             }
         });
     }
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function runGame(gameType) {
 
     // creates two random numbers between 1 and 25
-    let num1 = Math.floor(Math.random() * 25;) +1;
-    let num2 = Math.floor(Math.random() * 25;) +1;
+    let num1 = Math.floor(Math.random() * 25) + 1;
+    let num2 = Math.floor(Math.random() * 25) + 1;
 
     if (gameType === "addition") {
         displayAdditionQuestion(num1, num2);
@@ -37,8 +37,22 @@ function runGame(gameType) {
     }
 }
 
+/**
+ * checks the answer against the first element in 
+ * the returned calculateCorrectAnswer array
+ */
 function checkAnswer() {
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
+    let calculatedAnswer = calculateCorrectAnswer();
+    let isCorrect = userAnswer === calculatedAnswer[0];
 
+    if (isCorrect) {
+        alert("Hey! You got it right!");
+    } else {
+        alert(`Awwwww..... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}`);
+    }
+
+    runGame(calculatedAnswer[1]);
 }
 
 /**
