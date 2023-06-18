@@ -14,6 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+    /**
+     * Computer will listen for the user pressing a key. If the key that they press is enter
+     * then the checkAnswer function will be run
+     */
+    document.getElementById("answer-box").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    })
+
     runGame("addition");
 });
 
@@ -23,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
 */
 
 function runGame(gameType) {
+
+    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").focus(); //This sets the focus to the answer box, so that the curser is there ready to type. You don't have to click the box and instead can type straight away
 
     // creates two random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
@@ -104,18 +117,30 @@ function incrementWrongAnswer() {
     document.getElementById("incorrect").textContent = ++currentScore; //I have done this different to incrementScore, both ways work they are just different.
 }
 
+/**
+ * Takes the two random numbers generated in runGame and places them in the question
+ * Also changes the operator to a plus symbol
+ */
 function displayAdditionQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "+";
 }
-
+/**
+ * Takes the two random numbers generated in runGame and places the biiger value in the first slot (operand1) 
+ * and the smaller value in the second slot
+ * Also changes the operator to a minus symbol
+ */
 function displaySubtractQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
     document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent = "-";
 }
 
+/**
+ * Takes the two random numbers generated in runGame and places them in the question
+ * Also changes the operator to a times symbol
+ */
 function displayMultiplyQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
