@@ -1,39 +1,27 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome,
+# Walkthrough - Love Maths
+This walkthrough project was completed as part of my Diploma in Full Stack Software Development with Code Institute. The focus of the walkthrough was to put into practice JavaScript.
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Note: There is no live webpage of this project
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+# Description of the 'Love Maths' page
+Love Maths is an interactive game. The user is provided with a maths question, which once submitted is checked. The user will then be alerted as to whether they got the answer correct and if not what the answer was. A score board keeps track of their number of correct and incorrect answers. The user can also select whether they are given an addition, subtraction, multiplication or division question.
 
-## Codeanywhere Reminders
+# Languages
+JavaScript
+HTML (a portion of the HTML was provided and copied and pasted into this repository)
+CSS (all CSS was provided and copied and pasted into this repository)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+# Tools and technologies
+Git hub
+Git
+Codeanywhere IDE
 
-`python3 -m http.server`
+# Credits
+Credit for the vast majority of both the code and content of this project is given to Code Institue. Instruction was provided in the form of videos which I then implemented using the tools listed above.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+All code relating to the division questions was coded by myself, including finding a way to ensure the division questions set always equalled a whole number.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+This README was completed independently with the following credits:
+CI logo by Code Institute.
