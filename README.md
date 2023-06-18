@@ -3,7 +3,7 @@
 # Walkthrough - Love Maths
 This walkthrough project was completed as part of my Diploma in Full Stack Software Development with Code Institute. The focus of the walkthrough was to put into practice JavaScript.
 
-Note: There is no live webpage of this project
+Link to live page: https://georginacarlisle.github.io/Walkthrough-LoveMaths/
 
 # Description of the 'Love Maths' page
 Love Maths is an interactive game. The user is provided with a maths question, which once submitted is checked. The user will then be alerted as to whether they got the answer correct and if not what the answer was. A score board keeps track of their number of correct and incorrect answers. The user can also select whether they are given an addition, subtraction, multiplication or division question.
