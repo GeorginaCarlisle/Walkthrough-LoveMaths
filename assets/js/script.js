@@ -50,6 +50,9 @@ function runGame(gameType) {
     else if (gameType === "subtract") {
         displaySubtractQuestion(num1, num2);
     }
+    else if (gameType === "division") {
+        displayDivisionQuestion(num1, num2);
+    }
     else {
         alert(`Unknown game type: ${gameType}`); // in case of error in passing of parameter
         throw `Unknown game type: ${gameType}. Aborting!`; // if error does occur throw will terminate the gmae and pass the given error to the console
@@ -94,6 +97,9 @@ function calculateCorrectAnswer() {
     else if (operator === "-") {
         return [operand1 - operand2, "subtract"];
     }
+    else if (operator === "/") {
+        return [operand1 / operand2, "division"];
+    }
     else {
         alert(`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
@@ -126,6 +132,7 @@ function displayAdditionQuestion(operand1, operand2) {
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "+";
 }
+
 /**
  * Takes the two random numbers generated in runGame and places the biiger value in the first slot (operand1) 
  * and the smaller value in the second slot
@@ -145,4 +152,22 @@ function displayMultiplyQuestion(operand1, operand2) {
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "x";
+}
+
+/**
+ * Takes the smallest of the two random numbers generated in runGame and places in the second slot (operand2)
+ * 
+ * Also changes the operator to a divide symbol
+ */
+function displayDivisionQuestion(operand1, operand2) {
+    let newNumber = Math.floor(Math.random() * 10) + 1;
+    if (operand1 < operand2) {
+        document.getElementById('operand2').textContent = operand1;
+        document.getElementById('operand1').textContent = operand1 * newNumber;
+    }
+    else {
+        document.getElementById('operand2').textContent = operand2;
+        document.getElementById('operand1').textContent = operand2 * newNumber;
+    }
+    document.getElementById('operator').textContent = "/";
 }
