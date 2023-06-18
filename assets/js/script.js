@@ -34,7 +34,9 @@ function runGame(gameType) {
     else if (gameType === "multiply") {
         displayMultiplyQuestion(num1, num2);
     }
-
+    else if (gameType === "subtract") {
+        displaySubtractQuestion(num1, num2);
+    }
     else {
         alert(`Unknown game type: ${gameType}`); // in case of error in passing of parameter
         throw `Unknown game type: ${gameType}. Aborting!`; // if error does occur throw will terminate the gmae and pass the given error to the console
@@ -75,6 +77,9 @@ function calculateCorrectAnswer() {
     }
     else if (operator === "x") {
         return [operand1 * operand2, "multiply"];
+    }
+    else if (operator === "-") {
+        return [operand1 - operand2, "subtract"];
     }
     else {
         alert(`Unimplemented operator ${operator}`);
